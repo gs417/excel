@@ -128,7 +128,82 @@ def excel_l0_html():
     </div>
     <div class="tb-tip">最初は <strong>Ctrl + Z</strong>（元に戻す）と <strong>Ctrl + S</strong>（保存）だけ覚えれば大丈夫！失敗しても戻せるので、怖がらずにどんどん触ってみましょう。</div>
 
-    <h4 class="tb-section">8. 次のステップ</h4>
+    <h4 class="tb-section">8. Excelショートカットキー一覧</h4>
+    <p>よく使うショートカットをまとめました。最初は上の5つだけ覚えれば十分です。</p>
+
+    <div class="tb-example">
+      <span class="label">基本操作（まずこれだけ覚えよう）</span>
+      <strong>Ctrl + S / ⌘ + S</strong> → 上書き保存（こまめに！）<br>
+      <strong>Ctrl + Z / ⌘ + Z</strong> → 元に戻す（何度でも戻れる）<br>
+      <strong>Ctrl + C / ⌘ + C</strong> → コピー<br>
+      <strong>Ctrl + V / ⌘ + V</strong> → 貼り付け<br>
+      <strong>Ctrl + X / ⌘ + X</strong> → 切り取り
+    </div>
+
+    <div class="tb-example">
+      <span class="label">セル移動・選択</span>
+      <strong>Ctrl + ↓↑←→ / ⌘ + ↓↑←→</strong> → データの端までジャンプ<br>
+      <strong>Ctrl + Home / ⌘ + Home</strong> → シートの先頭（A1）に移動<br>
+      <strong>Ctrl + End / ⌘ + End</strong> → データの最終セルに移動<br>
+      <strong>Ctrl + Shift + ↓ / ⌘ + Shift + ↓</strong> → データの端まで選択<br>
+      <strong>Ctrl + Space</strong> → 列全体を選択<br>
+      <strong>Shift + Space</strong> → 行全体を選択<br>
+      <strong>Ctrl + A / ⌘ + A</strong> → 全セル選択
+    </div>
+
+    <div class="tb-example">
+      <span class="label">編集・入力</span>
+      <strong>F2</strong> → セルを編集モードにする（ダブルクリックと同じ）<br>
+      <strong>Enter</strong> → 確定して下に移動<br>
+      <strong>Tab</strong> → 確定して右に移動<br>
+      <strong>Esc</strong> → 入力をキャンセル<br>
+      <strong>Delete</strong> → セルの内容を削除<br>
+      <strong>Ctrl + D / ⌘ + D</strong> → 上のセルをコピー（下方向フィル）<br>
+      <strong>Ctrl + R / ⌘ + R</strong> → 左のセルをコピー（右方向フィル）<br>
+      <strong>Ctrl + Enter / ⌘ + Enter</strong> → 選択した全セルに同じ値を入力
+    </div>
+
+    <div class="tb-example">
+      <span class="label">書式設定</span>
+      <strong>Ctrl + B / ⌘ + B</strong> → 太字<br>
+      <strong>Ctrl + 1 / ⌘ + 1</strong> → セルの書式設定ダイアログを開く<br>
+      <strong>Ctrl + Shift + 1</strong> → 桁区切り（1,000）書式<br>
+      <strong>Ctrl + Shift + 4</strong> → 通貨（¥）書式<br>
+      <strong>Ctrl + Shift + 5</strong> → パーセント（%）書式
+    </div>
+
+    <div class="tb-example">
+      <span class="label">行・列の操作</span>
+      <strong>Ctrl + Shift + + / ⌘ + Shift + +</strong> → 行または列を挿入<br>
+      <strong>Ctrl + - / ⌘ + -</strong> → 行または列を削除<br>
+      <strong>Alt + H → O → I（Win）</strong> → 列幅の自動調整<br>
+      <strong>Ctrl + 9</strong> → 選択行を非表示<br>
+      <strong>Ctrl + 0</strong> → 選択列を非表示
+    </div>
+
+    <div class="tb-example">
+      <span class="label">数式・関数</span>
+      <strong>=</strong> → 数式の入力を開始<br>
+      <strong>Tab</strong> → 関数の候補を確定（入力中に出てくるリストから選択）<br>
+      <strong>F4</strong> → セル参照の固定（$マーク切替: A1 → $A$1 → A$1 → $A1）<br>
+      <strong>Ctrl + ` / ⌘ + `</strong> → 数式の表示/非表示を切替<br>
+      <strong>Alt + = / ⌘ + Shift + T</strong> → オートSUM（選択範囲を自動合計）
+    </div>
+
+    <div class="tb-example">
+      <span class="label">その他の便利機能</span>
+      <strong>Ctrl + F / ⌘ + F</strong> → 検索<br>
+      <strong>Ctrl + H / ⌘ + H</strong> → 置換<br>
+      <strong>Ctrl + P / ⌘ + P</strong> → 印刷<br>
+      <strong>Ctrl + N / ⌘ + N</strong> → 新しいブックを開く<br>
+      <strong>Alt + Enter（Win）/ Control + Option + Enter（Mac）</strong> → セル内で改行<br>
+      <strong>Ctrl + ; / ⌘ + ;</strong> → 今日の日付を入力<br>
+      <strong>Ctrl + Shift + ; / ⌘ + Shift + ;</strong> → 現在の時刻を入力
+    </div>
+
+    <div class="tb-tip">まずは <strong>Ctrl+S</strong>（保存）、<strong>Ctrl+Z</strong>（戻す）、<strong>Ctrl+C/V</strong>（コピペ）の4つを体に覚えさせましょう。慣れたら <strong>Ctrl+↓</strong>（端ジャンプ）と <strong>F4</strong>（$固定）を追加すると作業スピードが格段に上がります。</div>
+
+    <h4 class="tb-section">9. 次のステップ</h4>
     <p>基本操作がわかったら、<strong>Lesson 1: 基本関数</strong>に進みましょう！</p>
     <p>Lesson 1 では、SUM（合計）、AVERAGE（平均）、COUNT（件数）など、仕事でよく使う5つの関数を学びます。</p>
     <div class="tb-highlight">
