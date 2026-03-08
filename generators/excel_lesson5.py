@@ -166,7 +166,7 @@ def generate(output_dir: str):
             styles.add_grading_cell(ws, row, grading_col, f"C{row}", expected)
         else:
             cell = ws.cell(row=row, column=grading_col)
-            cell.value = f'=IF(C{row}="","",IF(C{row}=解答!B{qno[1:]},"✓ 正解","✗ 不正解"))'
+            cell.value = f"=IF(C{row}=\"\",\"\",IF(C{row}='解答'!B{qno[1:]},\"✓ 正解\",\"✗ 不正解\"))"
             cell.font = styles.FONT_HIDDEN
             cell.alignment = styles.ALIGN_CENTER
             cell.border = styles.THIN_BORDER
@@ -201,7 +201,7 @@ def generate(output_dir: str):
             styles.add_grading_cell(ws, row, grading_col, f"C{row}", expected)
         else:
             cell = ws.cell(row=row, column=grading_col)
-            cell.value = f'=IF(C{row}="","",IF(C{row}=解答!B{qno[1:]},"✓ 正解","✗ 不正解"))'
+            cell.value = f"=IF(C{row}=\"\",\"\",IF(C{row}='解答'!B{qno[1:]},\"✓ 正解\",\"✗ 不正解\"))"
             cell.font = styles.FONT_HIDDEN
             cell.alignment = styles.ALIGN_CENTER
             cell.border = styles.THIN_BORDER
@@ -228,7 +228,7 @@ def generate(output_dir: str):
         ws.cell(row=row, column=2).border = styles.THIN_BORDER
         styles.mark_answer_cell(ws, row, answer_col)
         cell = ws.cell(row=row, column=grading_col)
-        cell.value = f'=IF(C{row}="","",IF(C{row}=解答!B{qno[1:]},"✓ 正解","✗ 不正解"))'
+        cell.value = f"=IF(C{row}=\"\",\"\",IF(C{row}='解答'!B{qno[1:]},\"✓ 正解\",\"✗ 不正解\"))"
         cell.font = styles.FONT_HIDDEN
         cell.alignment = styles.ALIGN_CENTER
         cell.border = styles.THIN_BORDER

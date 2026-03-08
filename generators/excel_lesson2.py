@@ -138,11 +138,11 @@ def generate(output_dir: str):
             styles.add_grading_cell(ws, r, grading_col, answer_ref, expected)
         else:
             # 文字列比較: 解答シートのセル参照
-            ws_ans_ref = f'解答!B{i + 2}'
+            ws_ans_ref = f"'解答'!B{i + 2}"
             styles.add_grading_formula_cell(ws, r, grading_col, answer_ref, ws_ans_ref)
             # Override with text comparison for strings
             cell = ws.cell(row=r, column=grading_col)
-            cell.value = f'=IF({answer_ref}="","",IF({answer_ref}=解答!B{i+2},"✓ 正解","✗ 不正解"))'
+            cell.value = f"=IF({answer_ref}=\"\",\"\",IF({answer_ref}='解答'!B{i+2},\"✓ 正解\",\"✗ 不正解\"))"
 
     end_row = start_row + len(questions) - 1
     styles.apply_grading_format(ws, grading_col, start_row, end_row)
