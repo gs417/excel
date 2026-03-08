@@ -266,7 +266,7 @@ def _q_cards(lesson_id, questions):
     <div class="question-card">
       <div class="q-header">Q{i+1}. {q["q"]}</div>{hint_html}
       <div class="q-input">
-        <input type="text" id="{lesson_id}-q{i}" placeholder="{ph}" inputmode="{imode}">
+        <input type="text" id="{lesson_id}-q{i}" placeholder="{ph}" inputmode="{imode}" onkeydown="if(event.key==='Enter')gradeQ('{lesson_id}',{i})">
         <button class="grade-btn" onclick="gradeQ('{lesson_id}',{i})">採点</button>
       </div>
       <div class="result" id="{lesson_id}-r{i}"></div>
@@ -322,21 +322,21 @@ def _build_html(thumbs=None):
     e4_regions_html = ''
     for label, val in e4["regions"]:
         e4_regions_html += f'''<div class="pivot-row"><span class="pivot-label">{label}</span>
-        <input type="text" id="e4-r-{label}" inputmode="numeric" placeholder="金額">
+        <input type="text" id="e4-r-{label}" inputmode="numeric" placeholder="金額" onkeydown="if(event.key==='Enter')gradePivot('e4-r-{label}',{val})">
         <button class="grade-btn" onclick="gradePivot('e4-r-{label}',{val})">採点</button>
         <span class="result" id="e4-r-{label}-r"></span></div>'''
 
     e4_cats_html = ''
     for label, val in e4["categories"]:
         e4_cats_html += f'''<div class="pivot-row"><span class="pivot-label">{label}</span>
-        <input type="text" id="e4-c-{label}" inputmode="numeric" placeholder="金額">
+        <input type="text" id="e4-c-{label}" inputmode="numeric" placeholder="金額" onkeydown="if(event.key==='Enter')gradePivot('e4-c-{label}',{val})">
         <button class="grade-btn" onclick="gradePivot('e4-c-{label}',{val})">採点</button>
         <span class="result" id="e4-c-{label}-r"></span></div>'''
 
     e4_reps_html = ''
     for label, val in e4["reps"]:
         e4_reps_html += f'''<div class="pivot-row"><span class="pivot-label">{label}</span>
-        <input type="text" id="e4-rp-{label}" inputmode="numeric" placeholder="件数">
+        <input type="text" id="e4-rp-{label}" inputmode="numeric" placeholder="件数" onkeydown="if(event.key==='Enter')gradePivot('e4-rp-{label}',{val})">
         <button class="grade-btn" onclick="gradePivot('e4-rp-{label}',{val})">採点</button>
         <span class="result" id="e4-rp-{label}-r"></span></div>'''
 
@@ -398,6 +398,11 @@ def _build_html(thumbs=None):
     ppt1_proc = extras.ppt1_process()
     ppt2_proc = extras.ppt2_process()
     ppt3_proc = extras.ppt3_process()
+    ppt_vcss = extras.ppt_visual_css()
+    ppt_examples = extras.ppt_slide_examples()
+    ppt_frameworks = extras.ppt_frameworks_visual()
+    ppt_design = extras.ppt_design_rules()
+    ppt_charts = extras.ppt_chart_selector()
     lt_html = lt_content.lt_panels_html()
     lt_js = lt_content.lt_js_code()
     chat_css = extras.ai_chat_css()
@@ -565,6 +570,7 @@ h3{{color:var(--primary);margin:20px 0 12px;font-size:1.15rem}}
   .tb-compare{{grid-template-columns:1fr}}
   .dash-grid{{grid-template-columns:1fr}}
 }}
+{ppt_vcss}
 {chat_css}
 </style>
 </head>
@@ -724,19 +730,19 @@ h3{{color:var(--primary);margin:20px 0 12px;font-size:1.15rem}}
   <p style="color:var(--text-light);font-size:.9rem;margin-bottom:12px">月別売上を計算し、上位3ヶ月の月名(YYYY-MM)と金額を入力</p>
   <div class="pivot-row"><span class="pivot-label">1位</span>
     <input type="text" id="e4-top-m0" placeholder="YYYY-MM" style="max-width:120px">
-    <input type="text" id="e4-top-a0" placeholder="金額" inputmode="numeric">
+    <input type="text" id="e4-top-a0" placeholder="金額" inputmode="numeric" onkeydown="if(event.key==='Enter')gradeTop3(0)">
     <button class="grade-btn" onclick="gradeTop3(0)">採点</button><span class="result" id="e4-top-r0"></span></div>
   <div class="pivot-row"><span class="pivot-label">2位</span>
     <input type="text" id="e4-top-m1" placeholder="YYYY-MM" style="max-width:120px">
-    <input type="text" id="e4-top-a1" placeholder="金額" inputmode="numeric">
+    <input type="text" id="e4-top-a1" placeholder="金額" inputmode="numeric" onkeydown="if(event.key==='Enter')gradeTop3(1)">
     <button class="grade-btn" onclick="gradeTop3(1)">採点</button><span class="result" id="e4-top-r1"></span></div>
   <div class="pivot-row"><span class="pivot-label">3位</span>
     <input type="text" id="e4-top-m2" placeholder="YYYY-MM" style="max-width:120px">
-    <input type="text" id="e4-top-a2" placeholder="金額" inputmode="numeric">
+    <input type="text" id="e4-top-a2" placeholder="金額" inputmode="numeric" onkeydown="if(event.key==='Enter')gradeTop3(2)">
     <button class="grade-btn" onclick="gradeTop3(2)">採点</button><span class="result" id="e4-top-r2"></span></div>
   <h3>✏️ タスク5: 東京×牛乳 クロス集計</h3>
   <div class="pivot-row"><span class="pivot-label">東京 × 牛乳</span>
-    <input type="text" id="e4-cross" inputmode="numeric" placeholder="金額">
+    <input type="text" id="e4-cross" inputmode="numeric" placeholder="金額" onkeydown="if(event.key==='Enter')gradePivot('e4-cross',{e4['cross']})">
     <button class="grade-btn" onclick="gradePivot('e4-cross',{e4['cross']})">採点</button>
     <span class="result" id="e4-cross-r"></span></div>
   <button class="show-answers-btn" onclick="toggleEl('e4-answers')">📝 模範解答を表示</button>
@@ -785,6 +791,8 @@ h3{{color:var(--primary);margin:20px 0 12px;font-size:1.15rem}}
     </div>
     <div class="tb-tip"><strong>ルール:</strong> ①タイトルにメッセージを書く ②箇条書きは3〜5個 ③文字は最低24pt</div>
     {ppt1_meth}
+    {ppt_design}
+    {ppt_frameworks}
   </div>
   <h3>🔴 Before（修正前）</h3>
   <div class="slide-card slide-bad"><div class="slide-header">上半期営業成績サマリー</div><div class="slide-body"><p style="font-size:.75rem;line-height:1.6">当社ミルクネクスト株式会社の法人営業部は、2025年度上半期において前年同期比118%の売上を達成しました。特に東京エリアのスーパーマーケット向け牛乳カテゴリの伸びが顕著で、新規取引先獲得数は前期比30%増加しています。一方、大阪エリアではヨーグルト製品の需要が高まっており、ギリシャ濃密ヨーグルトの採用店舗が150店を超えました。名古屋エリアでは飲食チェーン向けチーズ案件が進行中。福岡エリアはコンビニ本部への新規提案が課題。札幌エリアはバター・生クリームの業務用アップセルに注力。SFAツール活用度向上の研修を予定。欠品・配送遅延への不満も増加。</p></div></div>
@@ -817,6 +825,7 @@ h3{{color:var(--primary);margin:20px 0 12px;font-size:1.15rem}}
     <div class="tb-example"><strong>① プロセス図:</strong> 順番がある情報 → 矢印でつなぐ<br><strong>② 構成比:</strong> 割合 → 棒/円グラフ<br><strong>③ マトリクス:</strong> 2軸で分類 → 4象限<br><strong>④ ピラミッド:</strong> 階層構造</div>
     <div class="tb-tip">「この情報は何の関係性を示しているか？」→ 順番ならプロセス図、割合なら構成比。</div>
     {ppt2_meth}
+    {ppt_charts}
   </div>
   <h3>🔴 Before</h3>
   <div class="slide-card slide-bad"><div class="slide-header">営業プロセス</div><div class="slide-body"><p style="font-size:.75rem;line-height:1.7">・ステップ1: ターゲット選定 — 商圏分析で30件/月リストアップ<br>・ステップ2: 初回訪問 — バイヤー面談、仕入先・棚状況ヒアリング<br>・ステップ3: 試食・サンプル — 品質を体感してもらう<br>・ステップ4: 棚割り交渉 — リベート・棚位置・エンド陳列<br>・ステップ5: 納品・フォロー — 2週間後に売場チェック</p></div></div>
@@ -868,6 +877,7 @@ h3{{color:var(--primary);margin:20px 0 12px;font-size:1.15rem}}
     <p><span class="tb-keyword">バイヤー</span> = スーパーの仕入れ担当者。棚に何を並べるか決める人。</p>
     <p><span class="tb-keyword">リベート</span> = メーカー→小売への販売報奨金。導入のインセンティブ。</p>
     {ppt3_meth}
+    {ppt_examples}
   </div>
   <div class="scenario-box"><strong>🏢 シナリオ</strong><br>あなた: ミルクネクスト法人営業担当<br>取引先: グリーンバスケット（スーパー、関東50店舗）<br>状況: 乳製品売上95%で低迷、棚2本、健康志向ニーズ未対応<br>提案: ギリシャヨーグルト+牛乳の重点導入 → 棚3本化+月次試食 → 15%UP見込み</div>
   <h3>🤔 考えるポイント</h3>
@@ -948,7 +958,7 @@ def _q_cards_offset(lesson_id, questions, offset):
     <div class="question-card">
       <div class="q-header">Q{idx+1}. {q["q"]}</div>
       <div class="q-input">
-        <input type="text" id="{lesson_id}-q{idx}" placeholder="{ph}" inputmode="{imode}">
+        <input type="text" id="{lesson_id}-q{idx}" placeholder="{ph}" inputmode="{imode}" onkeydown="if(event.key==='Enter')gradeQ('{lesson_id}',{idx})">
         <button class="grade-btn" onclick="gradeQ('{lesson_id}',{idx})">採点</button>
       </div>
       <div class="result" id="{lesson_id}-r{idx}"></div>

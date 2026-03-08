@@ -357,6 +357,460 @@ def ppt3_process():
 <p><strong>Step 3:</strong> 実行の具体性を示す → 3ヶ月のタイムライン、Month 1→2→3のステップ</p>'''
 
 
+def ppt_visual_css():
+    '''CSS for visual slide mockups, frameworks, and galleries.'''
+    return '''/* Slide Mockup */
+.smk{background:#fff;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.12);overflow:hidden;margin:12px 0}
+.smk-bar{padding:14px 20px;color:#fff;font-size:.88rem;font-weight:700}
+.smk-body{padding:16px 20px}
+.smk-footer{padding:6px 20px 12px;font-size:.72rem;color:#999;border-top:1px solid #eee;margin:0 20px;padding-top:8px}
+/* Gallery */
+.sg-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:20px 0}
+@media(max-width:768px){.sg-grid{grid-template-columns:1fr}}
+.sg-label{font-weight:700;color:var(--primary);font-size:.9rem;margin-bottom:8px}
+.sg-note{background:#FFF8E1;border:1px solid #FFD54F;border-radius:6px;padding:10px 14px;margin-top:10px;font-size:.8rem;line-height:1.7}
+.sg-note strong{color:#E65100}
+/* Framework flow */
+.fw-row{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:16px 0}
+.fw-box{border-radius:10px;padding:10px 14px;text-align:center;min-width:90px;font-size:.82rem;font-weight:700;color:#fff}
+.fw-arr{color:#999;padding:0 6px;font-size:1.1rem}
+/* Pyramid */
+.fw-pyr{display:flex;flex-direction:column;align-items:center;gap:4px;margin:16px 0}
+.fw-pyr-lv{color:#fff;padding:10px;text-align:center;font-weight:700;font-size:.82rem;border-radius:4px}
+/* Design principle cards */
+.dp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+@media(max-width:768px){.dp-grid{grid-template-columns:1fr}}
+.dp-card{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.dp-card-head{padding:10px 14px;font-weight:700;font-size:.85rem;color:#fff}
+.dp-card-body{padding:14px;font-size:.82rem;line-height:1.7}
+/* Color swatch */
+.color-row{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap}
+.color-chip{width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#fff;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+/* Chart type cards */
+.ct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+@media(max-width:768px){.ct-grid{grid-template-columns:1fr 1fr}}
+.ct-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.ct-icon{font-size:2rem;margin-bottom:6px}
+.ct-name{font-weight:700;font-size:.85rem;color:var(--primary);margin-bottom:4px}
+.ct-when{font-size:.75rem;color:var(--text-light);line-height:1.5}'''
+
+
+def ppt_slide_examples():
+    '''Gallery of beautiful slide examples with detailed annotations.'''
+    return '''<h4 class="tb-section">🎨 美しいスライド事例集</h4>
+<p>実務で使える「美しいスライド」の型を4つ紹介します。<strong>なぜ美しいのか？</strong>を理解して、自分のスライドに取り入れましょう。</p>
+
+<div class="sg-grid">
+  <div>
+    <div class="sg-label">① エグゼクティブサマリー</div>
+    <div class="smk">
+      <div class="smk-bar" style="background:#1F4E79">上半期業績: 前年比118%で着地</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px 20px">
+        <div style="text-align:center;padding:14px 8px;background:#F3F8FF;border-radius:8px">
+          <div style="font-size:1.5rem;font-weight:800;color:#4472C4">118%</div>
+          <div style="font-size:.68rem;color:#666;margin-top:3px">売上前年比</div>
+        </div>
+        <div style="text-align:center;padding:14px 8px;background:#F0FFF4;border-radius:8px">
+          <div style="font-size:1.5rem;font-weight:800;color:#70AD47">+30%</div>
+          <div style="font-size:.68rem;color:#666;margin-top:3px">新規取引先</div>
+        </div>
+        <div style="text-align:center;padding:14px 8px;background:#FFF8E1;border-radius:8px">
+          <div style="font-size:1.5rem;font-weight:800;color:#ED7D31">150店</div>
+          <div style="font-size:.68rem;color:#666;margin-top:3px">ヨーグルト採用</div>
+        </div>
+      </div>
+      <div class="smk-footer">東京エリアの牛乳カテゴリが牽引。ギリシャヨーグルトは目標を2ヶ月前倒しで達成。</div>
+    </div>
+    <div class="sg-note">
+      <strong>ここが優れている:</strong><br>
+      ✓ <strong>数字は3つだけ</strong> — 一目で全体像を把握できる<br>
+      ✓ <strong>KPIカード</strong>で視線を集中させる<br>
+      ✓ <strong>タイトルが結論</strong> — 「業績」ではなく「118%で着地」<br>
+      ✓ 補足は小さく下部に — 主役の数字を邪魔しない
+    </div>
+  </div>
+
+  <div>
+    <div class="sg-label">② Before / After 比較</div>
+    <div class="smk">
+      <div class="smk-bar" style="background:#1F4E79">棚割り変更で乳製品売上15%改善</div>
+      <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;padding:14px 16px;align-items:center">
+        <div style="text-align:center;padding:14px;background:#FFF0F0;border-radius:8px;border:1px solid #FFCDD2">
+          <div style="font-size:.68rem;font-weight:700;color:#C00000;margin-bottom:6px">BEFORE</div>
+          <div style="font-size:1.6rem;font-weight:800;color:#C00000">800万</div>
+          <div style="font-size:.65rem;color:#666;margin-top:4px">棚2本・競合中心</div>
+        </div>
+        <div style="font-size:1.8rem;padding:0 10px;color:#70AD47">→</div>
+        <div style="text-align:center;padding:14px;background:#F0FFF4;border-radius:8px;border:1px solid #C8E6C9">
+          <div style="font-size:.68rem;font-weight:700;color:#2E7D32;margin-bottom:6px">AFTER</div>
+          <div style="font-size:1.6rem;font-weight:800;color:#2E7D32">920万</div>
+          <div style="font-size:.65rem;color:#666;margin-top:4px">棚3本・当社1本確保</div>
+        </div>
+      </div>
+      <div style="text-align:center;padding:0 20px 14px">
+        <span style="display:inline-block;background:#4472C4;color:#fff;padding:4px 16px;border-radius:20px;font-size:.75rem;font-weight:700">+120万円/月（年間1,440万円増収）</span>
+      </div>
+    </div>
+    <div class="sg-note">
+      <strong>ここが優れている:</strong><br>
+      ✓ <strong>Before/After</strong>で変化が直感的にわかる<br>
+      ✓ <strong>色で感情を誘導</strong> — 赤=問題、緑=改善<br>
+      ✓ <strong>1つの数字に集中</strong> — 月120万円の増収が印象に残る<br>
+      ✓ タイトルで結論（15%改善）を先に示す
+    </div>
+  </div>
+
+  <div>
+    <div class="sg-label">③ タイムライン / ロードマップ</div>
+    <div class="smk">
+      <div class="smk-bar" style="background:#1F4E79">3ヶ月で導入効果を実証</div>
+      <div style="padding:16px 20px">
+        <div style="display:flex;align-items:flex-start;gap:0;position:relative">
+          <div style="flex:1;text-align:center">
+            <div style="width:40px;height:40px;background:#4472C4;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;margin:0 auto 8px">1</div>
+            <div style="font-weight:700;font-size:.78rem;color:#4472C4">準備</div>
+            <div style="font-size:.65rem;color:#666;margin-top:4px;line-height:1.5">棚割り設計<br>商品選定<br>POP制作</div>
+          </div>
+          <div style="flex:0;padding-top:18px;color:#ccc;font-size:1.2rem">──→</div>
+          <div style="flex:1;text-align:center">
+            <div style="width:40px;height:40px;background:#70AD47;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;margin:0 auto 8px">2</div>
+            <div style="font-weight:700;font-size:.78rem;color:#70AD47">実行</div>
+            <div style="font-size:.65rem;color:#666;margin-top:4px;line-height:1.5">棚替え実施<br>試食販売開始<br>スタッフ派遣</div>
+          </div>
+          <div style="flex:0;padding-top:18px;color:#ccc;font-size:1.2rem">──→</div>
+          <div style="flex:1;text-align:center">
+            <div style="width:40px;height:40px;background:#ED7D31;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;margin:0 auto 8px">3</div>
+            <div style="font-weight:700;font-size:.78rem;color:#ED7D31">検証</div>
+            <div style="font-size:.65rem;color:#666;margin-top:4px;line-height:1.5">売上データ分析<br>来店客数比較<br>次期計画策定</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sg-note">
+      <strong>ここが優れている:</strong><br>
+      ✓ <strong>3ステップ</strong>に絞る — 記憶に残りやすい<br>
+      ✓ <strong>丸い番号</strong>で進行を視覚化<br>
+      ✓ 各フェーズに<strong>色を割り当て</strong> — 段階が直感的<br>
+      ✓ 具体的なアクションを簡潔に列挙
+    </div>
+  </div>
+
+  <div>
+    <div class="sg-label">④ データストーリーテリング</div>
+    <div class="smk">
+      <div class="smk-bar" style="background:#1F4E79">ギリシャヨーグルトが成長を牽引</div>
+      <div style="padding:14px 20px">
+        <div style="display:flex;gap:12px;align-items:flex-end;justify-content:center;height:120px;padding-bottom:8px;border-bottom:2px solid #eee;margin-bottom:8px">
+          <div style="text-align:center">
+            <div style="width:42px;background:#B0C4DE;border-radius:4px 4px 0 0;height:50px"></div>
+            <div style="font-size:.6rem;color:#666;margin-top:4px">牛乳</div>
+          </div>
+          <div style="text-align:center">
+            <div style="width:42px;background:#ED7D31;border-radius:4px 4px 0 0;height:95px;position:relative">
+              <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:800;color:#ED7D31;white-space:nowrap">+42%</div>
+            </div>
+            <div style="font-size:.6rem;color:#666;margin-top:4px">ヨーグルト</div>
+          </div>
+          <div style="text-align:center">
+            <div style="width:42px;background:#B0C4DE;border-radius:4px 4px 0 0;height:40px"></div>
+            <div style="font-size:.6rem;color:#666;margin-top:4px">チーズ</div>
+          </div>
+          <div style="text-align:center">
+            <div style="width:42px;background:#B0C4DE;border-radius:4px 4px 0 0;height:25px"></div>
+            <div style="font-size:.6rem;color:#666;margin-top:4px">バター</div>
+          </div>
+        </div>
+        <div style="text-align:center;font-size:.72rem;color:#666">前年同期比カテゴリ別成長率</div>
+      </div>
+    </div>
+    <div class="sg-note">
+      <strong>ここが優れている:</strong><br>
+      ✓ <strong>主役を1つだけ強調</strong> — ヨーグルトだけオレンジ<br>
+      ✓ 他のバーは<strong>グレーに抑える</strong> — 「脇役」を明示<br>
+      ✓ <strong>+42%</strong>の数字をバーの上に配置 — 最も伝えたいデータ<br>
+      ✓ タイトルで「何を言いたいか」が明確
+    </div>
+  </div>
+</div>
+
+<div class="tb-tip">これらの型をそのまま真似するだけでも、スライドの質が格段に上がります。まずは<strong>①エグゼクティブサマリー</strong>と<strong>②Before/After</strong>を使いこなしましょう。</div>'''
+
+
+def ppt_frameworks_visual():
+    '''Visual framework diagrams for PPT creation.'''
+    return '''<h4 class="tb-section">📐 スライド作成フレームワーク集</h4>
+<p>プレゼンの構成に迷ったら、以下のフレームワークに当てはめましょう。</p>
+
+<div class="dp-grid">
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#4472C4">PREP法 — 説得力のある説明</div>
+    <div class="dp-card-body">
+      <div class="fw-row">
+        <div class="fw-box" style="background:#4472C4">Point<br><span style="font-size:.65rem;font-weight:400">結論</span></div>
+        <div class="fw-arr">→</div>
+        <div class="fw-box" style="background:#70AD47">Reason<br><span style="font-size:.65rem;font-weight:400">理由</span></div>
+        <div class="fw-arr">→</div>
+        <div class="fw-box" style="background:#ED7D31">Example<br><span style="font-size:.65rem;font-weight:400">具体例</span></div>
+        <div class="fw-arr">→</div>
+        <div class="fw-box" style="background:#4472C4">Point<br><span style="font-size:.65rem;font-weight:400">結論</span></div>
+      </div>
+      <p style="margin-top:8px">「棚割り変更を提案します（P）。なぜなら現状の棚は競合中心で当社シェアが低い（R）。実際にA店では変更後に15%売上増（E）。ぜひ導入ご検討を（P）」</p>
+    </div>
+  </div>
+
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#70AD47">空→雨→傘 — 事実ベースの提案</div>
+    <div class="dp-card-body">
+      <div class="fw-row">
+        <div style="text-align:center">
+          <div style="font-size:2rem">☀️</div>
+          <div class="fw-box" style="background:#4472C4;margin-top:4px">空（事実）</div>
+        </div>
+        <div class="fw-arr">→</div>
+        <div style="text-align:center">
+          <div style="font-size:2rem">🌧️</div>
+          <div class="fw-box" style="background:#ED7D31;margin-top:4px">雨（解釈）</div>
+        </div>
+        <div class="fw-arr">→</div>
+        <div style="text-align:center">
+          <div style="font-size:2rem">☂️</div>
+          <div class="fw-box" style="background:#70AD47;margin-top:4px">傘（行動）</div>
+        </div>
+      </div>
+      <p style="margin-top:8px">「乳製品売上が前年比95%（空）。健康志向ニーズに未対応が原因（雨）。ギリシャヨーグルト導入で集客強化（傘）」</p>
+    </div>
+  </div>
+
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#1F4E79">ピラミッド原則 — 結論ファースト</div>
+    <div class="dp-card-body">
+      <div class="fw-pyr">
+        <div class="fw-pyr-lv" style="background:#C00000;width:60%;padding:14px 10px;font-size:.9rem">結論（メインメッセージ）</div>
+        <div class="fw-pyr-lv" style="background:#ED7D31;width:80%">根拠①　　　根拠②　　　根拠③</div>
+        <div class="fw-pyr-lv" style="background:#FFC000;width:100%;color:#333">データ・事例・具体的な数字</div>
+      </div>
+      <p style="margin-top:8px">忙しい上司は「結論」だけ読むことも。<strong>最初に結論、後から根拠</strong>の順で構成するのが鉄則。</p>
+    </div>
+  </div>
+
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#ED7D31">課題→提案→効果 — 提案書の基本型</div>
+    <div class="dp-card-body">
+      <div class="fw-row">
+        <div style="text-align:center">
+          <div class="fw-box" style="background:#C00000;padding:12px 16px">課題<br><span style="font-size:.62rem;font-weight:400">相手の痛み</span></div>
+        </div>
+        <div class="fw-arr">→</div>
+        <div style="text-align:center">
+          <div class="fw-box" style="background:#4472C4;padding:12px 16px">提案<br><span style="font-size:.62rem;font-weight:400">解決策</span></div>
+        </div>
+        <div class="fw-arr">→</div>
+        <div style="text-align:center">
+          <div class="fw-box" style="background:#70AD47;padding:12px 16px">効果<br><span style="font-size:.62rem;font-weight:400">数字で証明</span></div>
+        </div>
+      </div>
+      <p style="margin-top:8px">提案書はこの3部構成が基本。「困ってますよね→こうすれば解決→するとこんなに良くなる」のストーリー。</p>
+    </div>
+  </div>
+</div>'''
+
+
+def ppt_design_rules():
+    '''Visual design principles for slide creation.'''
+    return '''<h4 class="tb-section">🎯 デザイン4原則</h4>
+<p>デザインの知識がなくても、この4つを守るだけでスライドが見違えるほど良くなります。</p>
+
+<div class="dp-grid">
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#4472C4">① 整列（Alignment）</div>
+    <div class="dp-card-body">
+      <div class="tb-compare" style="margin:0">
+        <div class="tb-bad" style="font-size:.75rem">
+          <div style="text-align:center">タイトル</div>
+          <div style="text-align:left;margin-top:6px">・項目A</div>
+          <div style="text-align:right">・項目B</div>
+          <div style="text-align:center">・項目C</div>
+        </div>
+        <div class="tb-good" style="font-size:.75rem">
+          <div style="text-align:left;font-weight:700">タイトル</div>
+          <div style="text-align:left;margin-top:6px">・項目A</div>
+          <div style="text-align:left">・項目B</div>
+          <div style="text-align:left">・項目C</div>
+        </div>
+      </div>
+      <p style="margin-top:8px"><strong>左揃えに統一</strong>するだけで、整然とした印象に。中央揃えと左揃えを混ぜるのはNG。</p>
+    </div>
+  </div>
+
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#70AD47">② 近接（Proximity）</div>
+    <div class="dp-card-body">
+      <div class="tb-compare" style="margin:0">
+        <div class="tb-bad" style="font-size:.75rem">
+          <div>売上: 1,200万</div>
+          <div style="margin-top:12px">利益: 400万</div>
+          <div style="margin-top:12px">取引先A</div>
+          <div style="margin-top:12px">取引先B</div>
+        </div>
+        <div class="tb-good" style="font-size:.75rem">
+          <div style="border-bottom:1px solid #ccc;padding-bottom:6px;margin-bottom:6px"><strong>業績</strong><br>売上: 1,200万<br>利益: 400万</div>
+          <div><strong>取引先</strong><br>取引先A<br>取引先B</div>
+        </div>
+      </div>
+      <p style="margin-top:8px"><strong>関連する情報をグループ化</strong>。余白で「ここからは別の話」と視覚的に区切る。</p>
+    </div>
+  </div>
+
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#ED7D31">③ コントラスト（Contrast）</div>
+    <div class="dp-card-body">
+      <div class="tb-compare" style="margin:0">
+        <div class="tb-bad" style="font-size:.75rem">
+          <div style="color:#888">売上前年比</div>
+          <div style="color:#888;font-size:1rem">118%</div>
+          <div style="color:#888;margin-top:4px">目標達成</div>
+        </div>
+        <div class="tb-good" style="font-size:.75rem">
+          <div style="color:#666">売上前年比</div>
+          <div style="color:#4472C4;font-size:1.6rem;font-weight:800">118%</div>
+          <div style="color:#666;margin-top:4px">目標達成</div>
+        </div>
+      </div>
+      <p style="margin-top:8px">最も伝えたい数字を<strong>大きく・太く・色付き</strong>に。全部同じサイズでは何も目立たない。</p>
+    </div>
+  </div>
+
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#1F4E79">④ 反復（Repetition）</div>
+    <div class="dp-card-body">
+      <div class="tb-compare" style="margin:0">
+        <div class="tb-bad" style="font-size:.75rem">
+          <div style="color:red;font-weight:700">課題1</div>
+          <div style="color:blue;font-style:italic;margin-top:4px">課題2</div>
+          <div style="color:green;text-decoration:underline;margin-top:4px">課題3</div>
+        </div>
+        <div class="tb-good" style="font-size:.75rem">
+          <div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:20px;background:#ED7D31;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700">1</div> 課題1</div>
+          <div style="display:flex;align-items:center;gap:6px;margin-top:4px"><div style="width:20px;height:20px;background:#ED7D31;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700">2</div> 課題2</div>
+          <div style="display:flex;align-items:center;gap:6px;margin-top:4px"><div style="width:20px;height:20px;background:#ED7D31;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700">3</div> 課題3</div>
+        </div>
+      </div>
+      <p style="margin-top:8px"><strong>同じ要素には同じスタイル</strong>を使う。色・形・フォントを統一すると、プロの資料に見える。</p>
+    </div>
+  </div>
+</div>
+
+<h4 class="tb-section">🎨 おすすめカラーパレット</h4>
+<p>ビジネス資料で使いやすい配色を3パターン紹介します。<strong>3色+グレー</strong>が鉄則です。</p>
+
+<div class="dp-grid">
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#1F4E79">ビジネスブルー（定番）</div>
+    <div class="dp-card-body">
+      <div class="color-row">
+        <div class="color-chip" style="background:#1F4E79">メイン</div>
+        <div class="color-chip" style="background:#4472C4">アクセント</div>
+        <div class="color-chip" style="background:#ED7D31">強調</div>
+        <div class="color-chip" style="background:#A5A5A5">補足</div>
+      </div>
+      <p style="margin-top:8px">最も無難で信頼感がある配色。上司への報告資料に最適。</p>
+    </div>
+  </div>
+
+  <div class="dp-card">
+    <div class="dp-card-head" style="background:#2E7D32">ナチュラルグリーン（食品・健康）</div>
+    <div class="dp-card-body">
+      <div class="color-row">
+        <div class="color-chip" style="background:#2E7D32">メイン</div>
+        <div class="color-chip" style="background:#70AD47">アクセント</div>
+        <div class="color-chip" style="background:#FFC000">強調</div>
+        <div class="color-chip" style="background:#A5A5A5">補足</div>
+      </div>
+      <p style="margin-top:8px">食品・健康関連の提案に。乳製品メーカーのプレゼンに合う。</p>
+    </div>
+  </div>
+</div>
+
+<div class="tb-highlight">
+  <strong>色選びで迷ったら「ビジネスブルー」を使えば間違いなし。</strong><br>
+  ① メイン色でタイトル・見出し ② アクセント色でグラフ・強調 ③ 強調色は1箇所だけ ④ それ以外はグレー
+</div>'''
+
+
+def ppt_chart_selector():
+    '''Visual chart type selector - when to use which chart.'''
+    return '''<h4 class="tb-section">📊 図解タイプ早見表</h4>
+<p>「どの図を使えばいいの？」と迷ったら、この早見表を参照してください。</p>
+
+<div class="ct-grid">
+  <div class="ct-card">
+    <div class="ct-icon">→→→</div>
+    <div class="ct-name">フロー図</div>
+    <div class="ct-when"><strong>順番・手順</strong>がある情報<br>例: 営業プロセス、承認フロー</div>
+    <div style="margin-top:8px;display:flex;gap:2px;align-items:center;justify-content:center">
+      <div style="background:#4472C4;color:#fff;font-size:.55rem;padding:4px 6px;border-radius:4px">Step1</div>
+      <div style="color:#ccc;font-size:.6rem">→</div>
+      <div style="background:#70AD47;color:#fff;font-size:.55rem;padding:4px 6px;border-radius:4px">Step2</div>
+      <div style="color:#ccc;font-size:.6rem">→</div>
+      <div style="background:#ED7D31;color:#fff;font-size:.55rem;padding:4px 6px;border-radius:4px">Step3</div>
+    </div>
+  </div>
+
+  <div class="ct-card">
+    <div class="ct-icon">📊</div>
+    <div class="ct-name">棒グラフ</div>
+    <div class="ct-when"><strong>大きさの比較</strong><br>例: カテゴリ別売上、月次推移</div>
+    <div style="margin-top:8px;display:flex;gap:4px;align-items:flex-end;justify-content:center;height:40px">
+      <div style="width:16px;background:#B0C4DE;border-radius:2px 2px 0 0;height:20px"></div>
+      <div style="width:16px;background:#ED7D31;border-radius:2px 2px 0 0;height:35px"></div>
+      <div style="width:16px;background:#B0C4DE;border-radius:2px 2px 0 0;height:25px"></div>
+      <div style="width:16px;background:#B0C4DE;border-radius:2px 2px 0 0;height:15px"></div>
+    </div>
+  </div>
+
+  <div class="ct-card">
+    <div class="ct-icon">🥧</div>
+    <div class="ct-name">円グラフ</div>
+    <div class="ct-when"><strong>全体に占める割合</strong><br>例: シェア構成、予算配分</div>
+    <div style="margin-top:8px;width:40px;height:40px;border-radius:50%;background:conic-gradient(#4472C4 0% 40%,#ED7D31 40% 70%,#70AD47 70% 90%,#A5A5A5 90%);margin:8px auto 0"></div>
+  </div>
+
+  <div class="ct-card">
+    <div class="ct-icon">📈</div>
+    <div class="ct-name">折れ線グラフ</div>
+    <div class="ct-when"><strong>時系列の変化</strong><br>例: 月次売上推移、成長率</div>
+    <div style="margin-top:8px;height:35px;position:relative;margin:8px 10px 0">
+      <svg viewBox="0 0 100 35" style="width:100%;height:100%"><polyline points="0,30 25,22 50,18 75,10 100,5" fill="none" stroke="#4472C4" stroke-width="2.5"/></svg>
+    </div>
+  </div>
+
+  <div class="ct-card">
+    <div class="ct-icon">⊞</div>
+    <div class="ct-name">マトリクス</div>
+    <div class="ct-when"><strong>2軸で分類</strong><br>例: 優先順位、ポジショニング</div>
+    <div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:2px;width:50px;margin:8px auto 0">
+      <div style="background:#4472C4;height:20px;border-radius:2px"></div>
+      <div style="background:#B0C4DE;height:20px;border-radius:2px"></div>
+      <div style="background:#B0C4DE;height:20px;border-radius:2px"></div>
+      <div style="background:#ED7D31;height:20px;border-radius:2px"></div>
+    </div>
+  </div>
+
+  <div class="ct-card">
+    <div class="ct-icon">△</div>
+    <div class="ct-name">ピラミッド</div>
+    <div class="ct-when"><strong>階層・優先度</strong><br>例: 組織図、戦略の階層</div>
+    <div style="margin-top:8px;display:flex;flex-direction:column;align-items:center;gap:2px">
+      <div style="width:20px;height:10px;background:#C00000;border-radius:2px"></div>
+      <div style="width:36px;height:10px;background:#ED7D31;border-radius:2px"></div>
+      <div style="width:52px;height:10px;background:#FFC000;border-radius:2px"></div>
+    </div>
+  </div>
+</div>
+
+<div class="tb-tip">迷ったら<strong>棒グラフかフロー図</strong>のどちらかを使えばたいてい解決します。円グラフは項目が5個以上あると見づらくなるので注意。</div>'''
+
+
 def ai_chat_css():
     '''Returns CSS for the AI chat floating button and panel.'''
     return '''.ai-chat-toggle{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:1.5rem;cursor:pointer;z-index:200;box-shadow:0 4px 16px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:transform .2s}
