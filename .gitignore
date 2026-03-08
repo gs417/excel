@@ -1,0 +1,7 @@
+output/
+deploy/public/
+deploy/.vercel/
+deploy/.env.local
+__pycache__/
+*.pyc
+.DS_Store

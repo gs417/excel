@@ -1,0 +1,10 @@
+{
+  "builds": [
+    { "src": "public/**", "use": "@vercel/static" },
+    { "src": "api/ask.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/ask", "dest": "/api/ask.py" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
+}
